@@ -1,0 +1,67 @@
+---
+- name: Install list of packages
+  apt: pkg={{item}} state=present
+  with_items:
+    - git
+    - git-extras
+    - tmux
+    - tmate
+    - httpie
+    - firefox-locale-fr
+    - graphviz
+    - make
+    - mdp		
+    - mongo-tools
+    - mongodb-clients
+    - nmap
+    - gparted
+    - php
+    - php-xml
+    - php-json
+    - pssh
+    - rsync
+    - wget
+    - youtube-dl 
+# to manage password
+    - keepassxc
+    - chromium-browser
+    - htop
+# nfs support for Vagrant
+    - nfs-kernel-server
+    - nfs-common
+    - portmap
+    - sparkleshare
+# needed for sparkleshare
+    - mono-devel
+    - curl
+# to manage gnome shell extensions
+    - chrome-gnome-shell
+# optimisation de la batterie
+# source : https://medium.com/@hkdb/ubuntu-18-04-on-lenovo-x1-carbon-6g-d99d5667d4d5
+# Vérifier qu'il est bien démarré
+# sudo tlp start
+# sudo systemctl enable tlp
+# sudo systemctl enable tlp-sleep
+    - tlp
+    - tlp-rdw
+    - acpi-call-dkms
+    - tp-smapi-dkms
+    - acpi-call-dkms
+  become: true    
+
+- name: Install "{{item}}" with option --classic
+  command: snap install {{item}} --classic
+  become: true
+  with_items:
+    - phpstorm
+    - slack
+    - insomnia
+    - spotify
+    - qownnotes
+    - sublime-text
+    - postman
+    - skype
+
+
+
+
