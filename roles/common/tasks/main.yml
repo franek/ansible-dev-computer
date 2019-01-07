@@ -47,6 +47,10 @@
     - acpi-call-dkms
     - tp-smapi-dkms
     - acpi-call-dkms
+# support pour exfat
+    - exfat-fuse
+    - exfat-utils
+    - xterm
   become: true    
 
 - name: Install "{{item}}" with option --classic
@@ -62,6 +66,12 @@
     - postman
     - skype
 
+- name: Install lsix
+  get_url:
+    url: https://raw.githubusercontent.com/hackerb9/lsix/master/lsix
+    dest: /usr/local/bin/lsix
+    mode: 0755
 
-
-
+- name: Install notable-1.1.0
+  apt:
+    deb: https://github.com/fabiospampinato/notable/releases/download/v1.1.0/notable_1.1.0_amd64.deb
