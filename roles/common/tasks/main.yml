@@ -51,6 +51,7 @@
     - exfat-fuse
     - exfat-utils
     - xterm
+    - gnome-tweaks
   become: true    
 
 - name: Install "{{item}}" with option --classic
@@ -75,3 +76,7 @@
 - name: Install notable-1.1.0
   apt:
     deb: https://github.com/fabiospampinato/notable/releases/download/v1.1.0/notable_1.1.0_amd64.deb
+
+- name: Install pennywise-0.6.3
+  apt:
+    deb: https://github.com/kamranahmedse/pennywise/releases/download/v0.6.3/pennywise_0.6.3_amd64.deb
