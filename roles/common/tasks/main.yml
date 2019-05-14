@@ -52,6 +52,10 @@
     - exfat-utils
     - xterm
     - gnome-tweaks
+    - # ab & co
+    - apache2-utils
+    - net-tools
+    - traceroute
   become: true    
 
 - name: Install "{{item}}" with option --classic
@@ -73,10 +77,16 @@
     dest: /usr/local/bin/lsix
     mode: 0755
 
-- name: Install notable-1.1.0
+- name: Install notable-1.3.0
   apt:
-    deb: https://github.com/fabiospampinato/notable/releases/download/v1.1.0/notable_1.1.0_amd64.deb
+    deb: https://github.com/fabiospampinato/notable/releases/download/v1.3.0/notable_1.3.0_amd64.deb
 
+# Cross-platform application to open any website or media in a floating window
+# https://github.com/kamranahmedse/pennywise
 - name: Install pennywise-0.6.3
   apt:
     deb: https://github.com/kamranahmedse/pennywise/releases/download/v0.6.3/pennywise_0.6.3_amd64.deb
+
+- name: Install chezmoi to manage dotfiles
+  apt:
+    deb: https://github.com/twpayne/chezmoi/releases/download/v1.5.1/chezmoi_1.5.1-776_linux_amd64.deb
