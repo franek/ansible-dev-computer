@@ -56,6 +56,7 @@
     - apache2-utils
     - net-tools
     - traceroute
+    - oathtool
   become: true    
 
 - name: Install "{{item}}" with option --classic
@@ -89,4 +90,4 @@
 
 - name: Install chezmoi to manage dotfiles
   apt:
-    deb: https://github.com/twpayne/chezmoi/releases/download/v1.5.1/chezmoi_1.5.1-776_linux_amd64.deb
+    deb: https://github.com/twpayne/chezmoi/releases/download/v1.5.2/chezmoi_1.5.2-799_linux_amd64.deb
