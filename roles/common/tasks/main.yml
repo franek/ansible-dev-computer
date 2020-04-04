@@ -56,6 +56,8 @@
     - net-tools
     - traceroute
     - oathtool
+    - vim
+    - lolcat
 # to capture your screen and create gif
     - peek
   become: true    
@@ -72,6 +74,7 @@
     - sublime-text
     - postman
     - skype
+    - asciicinema
 
 - name: Install lsix
   get_url:
@@ -79,9 +82,9 @@
     dest: /usr/local/bin/lsix
     mode: 0755
 
-- name: Install notable-1.6.2
+- name: Install notable-1.7.1
   apt:
-    deb: https://github.com/fabiospampinato/notable/releases/download/v1.6.2/notable_1.6.2_amd64.deb
+    deb: https://github.com/fabiospampinato/notable/releases/download/v1.7.1/notable_1.7.1_amd64.deb
 
 # Cross-platform application to open any website or media in a floating window
 # https://github.com/kamranahmedse/pennywise
@@ -100,7 +103,7 @@
     state: present
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
 
-- name: Install the gedit package from flathub for current user
+- name: Install the Sparkleshare package from flathub for current user
   flatpak:
     name: org.sparkleshare.SparkleShare
     state: present
