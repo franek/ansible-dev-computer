@@ -11,8 +11,8 @@
     - graphviz
     - make
     - mdp		
-    - mongo-tools
-    - mongodb-clients
+#    - mongo-tools
+#    - mongodb-clients
     - nmap
     - gparted
     - php
@@ -45,7 +45,7 @@
     - tlp-rdw
     - acpi-call-dkms
     - tp-smapi-dkms
-    - acpi-call-dkms
+#    - acpi-call-dkms
 # support pour exfat
     - exfat-fuse
     - exfat-utils
@@ -67,14 +67,13 @@
   become: true
   with_items:
     - phpstorm
-    - slack
     - insomnia
     - spotify
-    - qownnotes
     - sublime-text
     - postman
     - skype
     - asciicinema
+    - chezmoi
 
 - name: Install lsix
   get_url:
@@ -82,19 +81,19 @@
     dest: /usr/local/bin/lsix
     mode: 0755
 
-- name: Install notable-1.7.1
+- name: Install notable-1.8.4
   apt:
-    deb: https://github.com/fabiospampinato/notable/releases/download/v1.7.1/notable_1.7.1_amd64.deb
+    deb: https://github.com/fabiospampinato/notable/releases/download/v1.8.4/notable_1.8.4_amd64.deb
 
 # Cross-platform application to open any website or media in a floating window
 # https://github.com/kamranahmedse/pennywise
-- name: Install pennywise-0.6.3
-  apt:
-    deb: https://github.com/kamranahmedse/pennywise/releases/download/v0.6.3/pennywise_0.6.3_amd64.deb
+#- name: Install pennywise-0.6.3
+#  apt:
+#    deb: https://github.com/kamranahmedse/pennywise/releases/download/v0.6.3/pennywise_0.6.3_amd64.deb
 
 #- name: Install chezmoi to manage dotfiles
 #  apt:
-#    deb: https://github.com/twpayne/chezmoi/releases/download/v1.5.6/chezmoi_1.5.6-891_linux_amd64.deb
+#    deb: https://github.com/twpayne/chezmoi/releases/download/v1.8.0/chezmoi_1.5.6-891_linux_amd64.deb
 #    only_upgrade: yes
 
 - name: Add the flathub flatpak repository remote to the user installation
