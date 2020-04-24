@@ -43,8 +43,7 @@
 # sudo systemctl enable tlp-sleep
     - tlp
     - tlp-rdw
-    - acpi-call-dkms
-    - tp-smapi-dkms
+#    - tp-smapi-dkms
 #    - acpi-call-dkms
 # support pour exfat
     - exfat-fuse
@@ -60,6 +59,13 @@
     - lolcat
 # to capture your screen and create gif
     - peek
+# copy-paste / commande line
+    - xclip
+    - zsh
+# https://doc.ubuntu-fr.org/autofs 
+    - autofs
+    - cifs-utils
+    - backintime-qt
   become: true    
 
 - name: Install "{{item}}" with option --classic
@@ -72,8 +78,9 @@
     - sublime-text
     - postman
     - skype
-    - asciicinema
+#    - asciicinema
     - chezmoi
+    - notable
 
 - name: Install lsix
   get_url:
@@ -81,9 +88,9 @@
     dest: /usr/local/bin/lsix
     mode: 0755
 
-- name: Install notable-1.8.4
-  apt:
-    deb: https://github.com/fabiospampinato/notable/releases/download/v1.8.4/notable_1.8.4_amd64.deb
+#- name: Install notable-1.8.4
+#  apt:
+#    deb: https://github.com/fabiospampinato/notable/releases/download/v1.8.4/notable_1.8.4_amd64.deb
 
 # Cross-platform application to open any website or media in a floating window
 # https://github.com/kamranahmedse/pennywise
